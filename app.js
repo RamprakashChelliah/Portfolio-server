@@ -13,8 +13,11 @@ const app = express();
 
 // set cors
 app.use(cors({
-    origin: 'https://ramprakashchelliah.github.io'
+    origin: 'https://ramprakashchelliah.github.io',
+    methods: ["GET", "POST"], 
+    allowedHeaders: ["Content-Type"]
 }))
+
 
 // use middelware to log our request
 app.use(morgan('combined'));
