@@ -12,12 +12,12 @@ const { emailRouter } = require('./routes/email.router');
 const app = express();
 
 // set cors
-app.use(cors({
-    origin: 'https://ramprakashchelliah.github.io',
-    methods: ["GET", "POST"], 
-    allowedHeaders: ["Content-Type"]
-}))
-
+// app.use(cors({
+//     origin: ['https://ramprakashchelliah.github.io', 'http://localhost:4200'],
+//     methods: ["POST"], 
+//     allowedHeaders: ["Content-Type"]
+// }))
+app.use(cors());   // allow everything for now
 
 // use middelware to log our request
 app.use(morgan('combined'));
