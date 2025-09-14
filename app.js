@@ -13,7 +13,7 @@ const app = express();
 
 // set cors
 app.use(cors({
-    origin: 'http://localhost:4200'
+    origin: 'https://ramprakashchelliah.github.io'
 }))
 
 // use middelware to log our request
