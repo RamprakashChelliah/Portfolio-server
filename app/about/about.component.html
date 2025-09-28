@@ -1,0 +1,58 @@
+<div class="wrapper">
+    <div class="title">
+        <span>Get To Know</span>
+        <h2>About Me</h2>
+    </div>
+    <div *ngIf="!isMobileScreen" class="content-wrapper">
+        <div class="left">
+            <img src="assets/Avatar/58d1ffd773e509545c3eaa04876b09c1.png" alt="">
+        </div>
+        <div class="right">
+            <ul class="exp-detail">
+                <li class="card">
+                    <img src="assets/Icons/experience.png" alt="" width="40">                        
+                    <div class="detail">
+                        <p class="heading">Experience</p>
+                        <div class="value-info">
+                            <span class="gap-splitter"></span>
+                            <span>{{totalExperience}}+</span>
+                            <span class="gap-splitter"></span>
+                        </div>
+                    </div>
+                </li>
+                <li [ngClass]="['card', 'company']" (click)="navigateToCompanies()">
+                    <img src="assets/Icons/building.png" alt="" width="40">
+                    <div class="detail">
+                        <p class="heading">Companies</p>
+                        <div class="value-info">
+                            <span class="gap-splitter"></span>
+                            <span>1</span>
+                            <mat-icon matTooltip="View company details">keyboard_arrow_right</mat-icon>
+                        </div>
+                    </div>
+                </li>
+                <li [ngClass]="['card', 'project']" (click)="navigateToProjects()">
+                    <img src="assets/Icons/project-management.png" alt="" width="40">
+                    <div class="detail">
+                        <p class="heading">Projects</p>
+                         <div class="value-info">
+                            <span class="gap-splitter"></span>
+                            <span>1</span>
+                            <mat-icon matTooltip="View project details">keyboard_arrow_right</mat-icon>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="content">
+                I have over {{totalExperience}}+ years of experience working with <span>.NET Core Web API</span>. During this time, I’ve developed and maintained various modules such as payroll, attendance, leave management, timesheets, work items, performance tracking, feeds, and approval workflows.
+                In addition to my backend expertise, I also have a strong interest in frontend technologies including HTML, CSS, JavaScript, and frameworks like Angular and React. <br><br>My goal is to grow into a proficient full-stack developer by continuing to expand my skills across both frontend and backend development.
+            </div>
+            <div class="button">
+                <button mat-raised-button mat-icon routerLink="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> <span>Let's talk</span><mat-icon>arrow_forward</mat-icon></button>
+            </div>
+        </div>
+    </div>
+
+    <app-mobile-view *ngIf="isMobileScreen" [totalExperience]="totalExperience"></app-mobile-view>
+    <app-navigation-bar></app-navigation-bar>
+</div>
